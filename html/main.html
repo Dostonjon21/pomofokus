@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-contexto="foco">
+<html lang="en" data-contexto="foco">
 
 <head>
     <meta charset="UTF-8">
@@ -56,7 +56,43 @@
     <div id="settings-modal" class="modal">
         <div class="modal-content">
             <span class="close" id="close-settings">&times;</span>
-            <h2>Settings</h2>
+            <div >
+                <h3 class="alo">⏱️ Timer Settings</h3>
+            
+                <div class="time-settings">
+                  <input type="number" value="25" placeholder="Pomodoro">
+                  <input type="number" value="5" placeholder="Short Break">
+                  <input type="number" value="15" placeholder="Long Break">
+                </div>
+            
+                <div class="setting-option">
+                  <span>Auto Start Breaks</span>
+                  <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+                </div>
+            
+                <div class="setting-option">
+                  <span>Auto Start Pomodoros</span>
+                  <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+                </div>
+            
+                <div class="setting-option interval-input">
+                  <span>Long Break Interval</span>
+                  <input type="number" value="4">
+                </div>
+              
+             <h3>✔Tasks</h3>
+             <div class="setting-option">
+                <span>Auto Check Tasks</span>
+                <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+              </div>
+              <div class="setting-option">
+                <span>Auto Switch Tasks
+                </span>
+                <div class="toggle-switch" onclick="this.classList.toggle('active')"></div>
+              </div>
+
+                <button class="btn-ok" > OK</button>
+              </div>
         </div>
     </div>
 
@@ -84,7 +120,7 @@
                 <button id="start-pause" class="app__card-primary-button">
                     <img class="app__card-primary-butto-icon" src="/imagens/play_arrow.png" alt="">
                     <span class="Start"> START </span>
-                </button>
+                </button> 
             </div>
         </div>
     </section>

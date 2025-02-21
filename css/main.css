@@ -82,7 +82,8 @@ color: #fff;
     margin: 10% auto;
     padding: 20px;
     border-radius: 5px;
-    width: 300px;
+    height: 300px;
+    width: 450px;
     text-align: center;
 }
 .close {
@@ -189,9 +190,175 @@ color: #fff;
     background-color: #ffdddd;
 }
 
+.settings-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .settings-container h3 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .time-settings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .time-settings input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+
+  .setting-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .toggle-switch::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: all 0.3s;
+  }
+
+  .toggle-switch.active {
+    background: #4caf50;
+  }
+
+  .toggle-switch.active::before {
+    transform: translateX(20px);
+  }
+
+  .interval-input input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  /* .settings-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+       width: 300px; 
+    } */
+
+     .settings-container h3 {
+     font-size: 14px;
+        color: #666;
+ 
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      } 
+      .alo{
+        margin-bottom: 20px;
+
+    }
+      
+
+    .time-settings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .time-settings input {
+      width: 90px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      text-align: center;
+      margin-left: -10px;
+      gap: 10px;
+    }
+
+    .setting-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 40px;
+      height: 20px;
+      background: #ddd;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .toggle-switch::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      top: 1px;
+      left: 1px;
+      transition: all 0.3s;
+    }
+
+    .toggle-switch.active {
+      background: #4caf50;
+    }
+
+    .toggle-switch.active::before {
+      transform: translateX(20px);
+    }
+
+    .interval-input input {
+      width: 50px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
 
 
-
+.btn-ok{
+    font-size: 20px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+       border-radius: 10px;
+       background-color: #BA4949;
+}
 
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -203,8 +370,6 @@ color: #fff;
         text-align: center;
     }
 }
-
-/* Para Celulares */
 @media (max-width: 767px) {
     .app__section-banner-container {
         width: 32rem;
