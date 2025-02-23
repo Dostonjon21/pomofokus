@@ -14,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let shortBreakTime = 300;
     let longBreakTime = 900;
 
-    document.addEventListener("DOMContentLoaded", displayTime);
+    // Avval timer vaqtini ekranga chiqaramiz
+    displayTime();
 
     focusBt.addEventListener('click', () => {
         elapsedTimeInSeconds = pomodoroTime;
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         intervalId = null;
         startPauseText.textContent = "Start";
         pauseIcon.setAttribute('src', `./images/play_arrow.png`);
+        
     }
 
     function displayTime() {
@@ -83,20 +85,34 @@ document.addEventListener("DOMContentLoaded", function () {
         timerDisplay.innerHTML = `<div class='timer-box'>${minutes}:${seconds}</div>`;
     }
 
+    // Settings modal ochish
     document.getElementById('settings-btn').addEventListener('click', function () {
         document.getElementById('settings-modal').style.display = 'block';
     });
 
+    // "OK" tugmasini bosganda vaqt sozlamalarini yangilash
     document.querySelector('.btn-ok').addEventListener('click', function () {
         const inputs = document.querySelectorAll('.time-settings input');
         pomodoroTime = parseInt(inputs[0].value) * 60;
         shortBreakTime = parseInt(inputs[1].value) * 60;
         longBreakTime = parseInt(inputs[2].value) * 60;
-        elapsedTimeInSeconds = pomodoroTime; 
+        
+        // Joriy kontekstga mos vaqtni tanlash
+        const currentContext = html.getAttribute('data-context');
+        if (currentContext === 'focus') {
+            elapsedTimeInSeconds = pomodoroTime;
+        } else if (currentContext === 'short-break') {
+            elapsedTimeInSeconds = shortBreakTime;
+        } else if (currentContext === 'long-break') {
+            elapsedTimeInSeconds = longBreakTime;
+        } else {
+            elapsedTimeInSeconds = pomodoroTime;
+        }
         displayTime();
         document.getElementById('settings-modal').style.display = 'none';
     });
 
+    // Modalni yopish
     document.querySelectorAll('.close').forEach(btn => {
         btn.addEventListener('click', function () {
             this.parentElement.parentElement.style.display = 'none';
@@ -109,5 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 modal.style.display = 'none';
             }
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.theme-btn').forEach(button => {
+    button.addEventListener('click', function () {
+        const chosenColor = this.getAttribute('data-color');
+        document.body.style.backgroundColor = chosenColor;
+    });
     });
 });
